@@ -14,10 +14,10 @@
     <form action="" class="formulario">
       <img src="imgLogo.jpg" class="imgLogo.jpg" />
 
-      <h1 class="formulario__titulo">DIGYTIPY</h1>
-      <h3 class="formulario__subtitulo">Reservas</h3>
+      <h1 class="formulario__titulo">RAGDOLL</h1>
+      <h3 class="formulario__subtitulo">Consultas</h3>
       <p class="formulario__parrafo">
-        Rellena este formulario para agendar tu cita en DIGYTIPY
+        Rellena este formulario para consultar lo que necesites
       </p>
 
       <label for="cliente" class="formulario__label">¿Cómo te llamas?</label>
@@ -25,36 +25,18 @@
         id="cliente"
         type="text"
         class="formulario__input"
-        placeholder="Nombre completo"
-      />
+        placeholder="Nombre completo"/>
 
-      <label for="fecha" class="formulario__label"
-        >¿Cuándo quieres reservar?</label
-      >
-      <input
-        id="fecha"
-        type="date"
-        class="formulario__input"
-        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
-      />
-
-      <label for="hora" class="formulario__label"
-        >¿A qué hora quieres reservar?</label
-      >
-      <input id="hora" type="time" class="formulario__input" />
-
-      <label for="empleado" class="formulario__label"
-        >Empleado de preferencia</label
-      >
-      <select id="empleado" name="listaempleados" class="formulario__input">
-        <option>EMPLEADO 1</option>
-        <option>EMPLEADO 2</option>
-      </select>
+      <label for="correo" class="formulario__label">Correo electrónico</label>
+      id="correo"
+      type="text"
+      class="formulario__input"
+      placeholder="Correo electrónico"/>
 
       <label for="servicio" class="formulario__label"
-        >¿Qué material quieres comprar?</label
+        >¿Sobre qué material es tu consulta?</label
       >
-      <select id="servicio" name="listaservicios" class="formulario__input">
+      <select id="materiales" name="listamateriales" class="formulario__input">
         <option>BOTONES</option>
         <option>RETALES</option>
         <option>HILOS</option>
@@ -62,6 +44,12 @@
         <option>PRENDAS VINTAGE</option>
       </select>
 
+      <label for="cliente" class="formulario__label">Otra consulta</label>label>
+      <input
+        id="cliente"
+        type="text"
+        class="formulario__input"
+        placeholder="Otra consulta"/>
       <div id="respuesta"></div>
 
       <button id="submit" class="formulario__submit">Enviar a WhatsApp</button>
