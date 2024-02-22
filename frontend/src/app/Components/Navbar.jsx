@@ -29,10 +29,10 @@ const Navbar = () => {
             <a className="text-sm" href="#">Home</a>
           </li>
           <li>
-            <a className="text-sm" href="#">About</a>
+            <a className="text-sm" href="/about">About</a>
           </li>
           <li>
-            <a className="text-sm" href="#">Contact</a>
+            <a className="text-sm" href="/prueba">Contact</a>
           </li>
           <Link
               
