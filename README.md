@@ -67,7 +67,8 @@ Eva Velasco
 
 ![globant](https://seeklogo.com/images/G/Globant-logo-824E22435D-seeklogo.com.gif)
 
-![factoriaf5](https://ruralcampii.slack.com/files/U066L8E6Q7K/F06KNRM8Z1V/captura_de_pantalla_2024-02-22_a_las_10.25.51.png)
+(![Logo FF5](C:\Users\Eva\Downloads\Logo FF5.png)
+
 
 
 
