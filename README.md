@@ -6,12 +6,10 @@ Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer
 #Instalaciones
 
 ##frontend
-```sh
-npm install
+
+``npm install
 npm run dev ``
 
-
--
 ##backend
 
 
