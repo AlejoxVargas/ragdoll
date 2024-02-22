@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const CreateBuyPage = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +48,8 @@ const CreateBuyPage = () => {
 
   return (
     <div>
+      <Navbar/>
+      
       <h1>Crear Compra</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -90,6 +94,8 @@ const CreateBuyPage = () => {
         </div>
         <button type="submit">Crear Compra</button>
       </form>
+
+      <Footer/>
     </div>
   );
 };

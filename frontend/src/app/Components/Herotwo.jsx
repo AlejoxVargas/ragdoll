@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 export default function Hero() {
   return (
     <div data-testid="hero-container" className="relative">
@@ -18,9 +19,11 @@ export default function Hero() {
           "Somos una comunidad de costura sostenible donde intercambiamos retales, botones y más. En lugar de dinero, utilizamos 'botones' ganados al intercambiar excedentes para obtener lo que necesitamos. Únete a nosotros y haz moda de manera consciente."
           </p>
           <div className="flex mt-8">
-              <a href="#" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
+            
+              <Link href="/CreateProduct" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
+
                   Quiero vender
-              </a>
+              </Link>
               <a href="#" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
                   Quiero comprar
               </a>
