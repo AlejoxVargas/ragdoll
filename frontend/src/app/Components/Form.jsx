@@ -179,7 +179,7 @@ function Form() {
           </div>
           {/* <button
             type="submit"
-            className="hover:shadow-form w-full rounded-md bg-indigo-600 py-3 px-8 text-center text-base font-semibold text-white outline-none"
+            className="hover:shadow-form w-full rounded-md bg-[#485B73] py-3 px-8 text-center text-base font-semibold text-white outline-none"
           >
             Subir Producto
           </button> */}
