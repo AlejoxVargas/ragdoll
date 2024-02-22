@@ -65,15 +65,15 @@ Las funcionalidades básicas que cubren la plataforma son las siguientes:
 
 ### Frontend
 - Mayo Ramirez(https://github.com/Mayonesio)
-- Shan
+- Shan(https://github.com/soyshan)
 - Alicia Ontiveros(https://github.com/AliciaoE)
-- Ana Maria Fernandez
+- Ana Maria Fernandez(https://github.com/Anadevega74)
 
 ### Backend
-- Romina Ruiz
-- Paola Andrea Guerra
-- Alejo
-- Eva Velasco
+- Romina Ruiz(https://github.com/rominaruizdiaz)
+- Paola Andrea Guerra(https://github.com/Paola-Guerra)
+- Alejo (https://github.com/AlejoxVargas)
+- Eva Velasco(https://github.com/evavelasco)
 
 # Expresiones de Gratitud 🎁
 
