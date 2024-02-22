@@ -8,7 +8,7 @@ Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer
 ##frontend
 ```sh
 npm install
-npm run dev
+npm run dev ``
 
 
 -
