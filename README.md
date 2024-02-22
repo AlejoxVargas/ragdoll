@@ -3,7 +3,7 @@
 
 Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer una plataforma donde sobrantes del sector textil puedan ser anunciados y los usuarios puedan acceder a esos recursos y subir los suyos propios, y el sistema de pago será a traves de puntos(botones) enfocado al reciclaje. Es un proyecto escalable y que puede ser implementado en otros sectores.
 
-#Instalaciones
+# Instalaciones
 
 ##frontend
 
@@ -46,7 +46,7 @@ Las funcionalidades básicas que cubren la plataforma son las siguientes:
 | origin/Paola| Rama de backend|
 | origin/Eva | Rama de backend|
 
-🛠️ #Tecnologías utilizadas
+ # Tecnologías utilizadas
 
 ![Static Badge](https://img.shields.io/badge/React-v%208.2.43-green?logo=react) 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v2.2.19-blue?logo=tailwind-css)
