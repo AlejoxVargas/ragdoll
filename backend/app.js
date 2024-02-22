@@ -9,13 +9,19 @@ app.use(cors());
 app.use(express.json());
 app.use("/", indexRoutes);
 
-try {
-  await db.authenticate();
-  console.log("Conexión establecida con la base de datos");
-} catch (error) {
-  console.log(error);
-}
+(async function() {
+  try {
+    await db.authenticate();
+    console.log("Conexión establecida con la base de datos");
+  } catch (error) {
+    console.log(error);
+  }
+})();
 
-app.listen(8000, () => {
-  console.log("Server running in http://localhost:8000");
+const port = process.env.NODE_ENV === 'test' ? 8001 : 8000;
+
+app.listen(port, () => {
+  console.log(`Server running in http://localhost:${port}`);
 });
+
+export default app;
