@@ -4,10 +4,14 @@
 Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer una plataforma donde sobrantes del sector textil puedan ser anunciados y los usuarios puedan acceder a esos recursos y subir los suyos propios, y el sistema de pago será a traves de puntos(botones) enfocado al reciclaje. Es un proyecto escalable y que puede ser implementado en otros sectores.
 
 #Instalaciones
+
 ##frontend
+
 - npm install para instalar node.js
 - npm run dev para arrancar el servidor
+- 
 ##backend
+
 
 # Ragdoll(página de compraventa de sobrantes textiles y accesorios)
 
