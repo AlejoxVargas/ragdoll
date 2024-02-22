@@ -63,7 +63,7 @@ function Hero() {
                 </div>
                 <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
                    <Images
-                   src="/maniqui1.png"
+                   src="/images/maniqui1.png"
                    alt="Logo de RagDoll"
                    className="dark:invert max-w-xs md:max-w-sm m-auto"
                    width={600}
