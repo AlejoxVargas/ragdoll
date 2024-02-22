@@ -54,22 +54,23 @@ Hemos utilizado Miro para crear tablero donde tener  diagramas de flujo.
 ## Nuestro equipo(18)
 
 # Frontend
-.Mayo Ramirez
-.Shan
-.Alicia Ontiveros
-.Ana Maria Fernandez
+-Mayo Ramirez
+-Shan
+-Alicia Ontiveros
+-Ana Maria Fernandez
 
 # Backend
-.Romina Ruiz
-.Paola Guerra
-.Alejo
-.Eva Velasco
+-Romina Ruiz
+-Paola Andrea Guerra
+-Alejo
+-Eva Velasco
 
 # Expresiones de Gratitud 🎁
 
 ![globant](https://seeklogo.com/images/G/Globant-logo-824E22435D-seeklogo.com.gif)
 
-(![Logo FF5](C:\Users\Eva\Downloads\Logo FF5.png)
+![Favicon Factoria F5 Web]
+
 
 
 
