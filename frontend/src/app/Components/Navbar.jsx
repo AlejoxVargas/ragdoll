@@ -26,21 +26,15 @@ const Navbar = () => {
         {/* Enlaces para la versión web */}
         <ul className="hidden md:flex items-center space-x-6">
           <li>
-            <a className="text-sm" href="#">Home</a>
+            <a className="text-sm" href="/">Home</a>
           </li>
           <li>
-            <a className="text-sm" href="#">About</a>
+            <a className="text-sm" href="/Form">Comprar</a>
           </li>
           <li>
-            <a className="text-sm" href="#">Contact</a>
+            <a className="text-sm" href="/Card">Vender</a>
           </li>
-          <Link
-              
-              href="/About"
-              className="hover:underline"
-            >
-              About
-            </Link>
+          
         </ul>
         {/* Menú desplegable para la versión móvil */}
         <div className='nav-toggle md:hidden' onClick={toggleNav} role="button" aria-expanded={isNavOpen} aria-controls="nav-links">
@@ -55,10 +49,10 @@ const Navbar = () => {
               <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/">Home</a>
             </li>
             <li>
-              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/about">About</a>
+              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/Form">Vender</a>
             </li>
             <li>
-              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="#">Contact</a>
+              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/Card">Comprar</a>
             </li>
             
           </ul>

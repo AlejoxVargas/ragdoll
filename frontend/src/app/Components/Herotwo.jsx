@@ -20,14 +20,13 @@ export default function Hero() {
           </p>
           <div className="flex mt-8">
             
-              <Link href="/CreateProduct" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
+              <Link href="/Form" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
 
                   Quiero vender
               </Link>
-              <a href="#" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
+              <a href="/Card" className="uppercase py-2 px-4 rounded-lg bg-[#a62139] border-2 border-transparent text-white text-md mr-4 hover:bg-[#641423]">
                   Quiero comprar
               </a>
-              
           </div>
       </div>
 

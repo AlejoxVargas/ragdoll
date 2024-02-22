@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import Button from './Button';
+import Navbar from './Navbar';
 
-const URI = "http://localhost:8000/blogs/";
+const URI = "http://localhost:8000/sells/";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -62,8 +62,17 @@ function Form() {
   };
 
   return (
+    <><Navbar/>
+    
     <div className="flex items-center justify-center p-12 bg-[#F2F2F2]">
+      
      <div className="mx-auto w-full max-w-[750px] bg-[#F2F2F2]"> 
+     <h1 className="font-bebas-neue text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800 mb-10">
+                        Sube aquí tu producto
+                        <span className="text-base sm:text-7xl text-[#d93b65]">
+                            Telita con nosotros
+                        </span>
+                    </h1>
         <form onSubmit={handleSubmit}>
    
           <div className="mb-5">
@@ -177,19 +186,17 @@ function Form() {
               className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
           </div>
-          {/* <button
+          <button
             type="submit"
-            className="hover:shadow-form w-full rounded-md bg-[#485B73] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+            className="hover:shadow-form w-full rounded-md bg-indigo-600 py-3 px-8 text-center text-base font-semibold text-white outline-none"
           >
             Subir Producto
-          </button> */}
-          <Button
-          type="submit"
-          text="Subir Producto"
-          />
+          </button>
+          
         </form>
       </div> 
     </div>
+    </>
   );
 }
 
