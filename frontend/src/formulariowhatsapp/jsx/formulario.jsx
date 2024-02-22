@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 function Reservas() {
   const [cliente, setCliente] = useState('');
-  const [fecha, setFecha] = useState('');
-  const [hora, setHora] = useState('');
   const [empleado, setEmpleado] = useState('EMPLEADO 1'); // Empleado predeterminado
   const [servicio, setServicio] = useState('AUDITORIA-GRATIS'); // Servicio predeterminado
   const [respuesta, setRespuesta] = useState('');
@@ -24,13 +22,9 @@ function Reservas() {
           *Reservas*%0A%0A
           *¿Cómo te llamas?
           ${cliente}%0A
-          *¿Cuándo quieres reservar?*%0A
-          ${fecha}%0A
-          *¿A qué hora quieres reservar?*%0A
-          ${hora}%0A
-          *Empleado de preferencia*%0A
-          ${empleado}%0A
-          *¿Qué servicio quieres realizar?*%0A
+          *Correo electrónico*%0A
+          ${correo}%0A
+          *¿Qué consulta quieres realizar?*%0A
           ${servicio}`;
 
     if (cliente === "" || fecha === "" || hora === "") {
@@ -52,7 +46,7 @@ function Reservas() {
       <h1 className="formulario__titulo">DIGYTIPY</h1>
       <h3 className="formulario__subtitulo">Reservas</h3>
       <p className="formulario__parrafo">
-        Rellena este formulario para agendar tu cita en DIGYTIPY
+        Rellena este formulario para realizar tu consulta
       </p>
 
       <label htmlFor="cliente" className="formulario__label">¿Cómo te llamas?</label>
@@ -65,47 +59,30 @@ function Reservas() {
         onChange={(e) => setCliente(e.target.value)}
       />
 
-      <label htmlFor="fecha" className="formulario__label">¿Cuándo quieres reservar?</label>
-      <input
-        id="fecha"
-        type="date"
-        className="formulario__input"
-        value={fecha}
-        onChange={(e) => setFecha(e.target.value)}
-      />
-
-      <label htmlFor="hora" className="formulario__label">¿A qué hora quieres reservar?</label>
-      <input
-        id="hora"
-        type="time"
-        className="formulario__input"
-        value={hora}
-        onChange={(e) => setHora(e.target.value)}
-      />
-
-      <label htmlFor="empleado" className="formulario__label">Empleado de preferencia</label>
+      
+      <label htmlFor="correo" className="formulario__label">Empleado de preferencia</label>
       <select
-        id="empleado"
+        id="correo"
         className="formulario__input"
-        value={empleado}
-        onChange={(e) => setEmpleado(e.target.value)}
+        value={correo}
+        onChange={(e) => setCorreo(e.target.value)}
       >
-        <option>EMPLEADO 1</option>
-        <option>EMPLEADO 2</option>
+        <option>correo 1</option>
+        <option>correo 2</option>
       </select>
 
-      <label htmlFor="servicio" className="formulario__label">¿Qué servicio quieres realizar?</label>
+      <label htmlFor="consulta" className="formulario__label">¿Qué consulta quieres realizar?</label>
       <select
-        id="servicio"
+        id="consulta"
         className="formulario__input"
-        value={servicio}
-        onChange={(e) => setServicio(e.target.value)}
+        value={consulta}
+        onChange={(e) => setConsulta(e.target.value)}
       >
-        <option>AUDITORIA-GRATIS</option>
-        <option>GESTION RRSS</option>
-        <option>PAGINA WEB</option>
-        <option>PUBLICIDAD EN RRSS</option>
-        <option>SEO/SEM</option>
+        <option>BOTONES</option>
+        <option>HILOS</option>
+        <option>RETALES</option>
+        <option>CREMALLERAS</option>
+        <option>PRENDAS VINTAGE</option>
       </select>
 
       <div id="respuesta">{respuesta}</div>
