@@ -1,17 +1,19 @@
 "use client"
 import React, { useState } from 'react';
+import Button from './Button';
+
+const URI = "http://localhost:8000/blogs/";
 
 function Form() {
   const [formData, setFormData] = useState({
-    vendedorId: '',
-    nombreProducto: '',
+    title: '',
     tags: '',
-    descripcion: '',
-    precio: '',
-    nombre: '',
-    email: '',
-    telefono: '',
-    imagenes: [],
+    description: '',
+    price: '',
+    image_url: '',
+    user_email: '',
+    user_phone: '',
+    user_name: '',
   });
 
   const handleChange = (e) => {
@@ -29,37 +31,48 @@ function Form() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes enviar los datos del formulario a tu backend
-    console.log(formData);
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("title", formData.title);
+      formDataToSend.append("tags", formData.tags);
+      formDataToSend.append("description", formData.description);
+      formDataToSend.append("price", formData.price);
+      formDataToSend.append("image", formData.image_url);
+      formDataToSend.append("email", formData.user_email);
+      formDataToSend.append("phone", formData.user_phone);
+      formDataToSend.append("name", formData.user_name);
+
+    
+      const response = await fetch("http://localhost:8000/sells", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      } else {
+        console.error("Error al crear la compra");
+      }
+    } catch (error) {
+      console.error("Error al crear la compra:", error);
+    }
   };
 
   return (
     <div className="flex items-center justify-center p-12 bg-[#F2F2F2]">
      <div className="mx-auto w-full max-w-[750px] bg-[#F2F2F2]"> 
         <form onSubmit={handleSubmit}>
-          {/* <div className="mb-5">
-            <label htmlFor="vendedorId" className="mb-3 block text-base font-medium text-gray-900">
-              ID del Vendedor
-            </label>
-            <input
-              type="text"
-              name="vendedorId"
-              id="vendedorId"
-              value={formData.vendedorId}
-              onChange={handleChange}
-              placeholder="Ingrese el ID del Vendedor"
-              className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-            />
-          </div> */}
+   
           <div className="mb-5">
             <label htmlFor="nombreProducto" className="mb-3 block text-base font-medium text-gray-900">
               Nombre del Producto
             </label>
             <input
               type="text"
-              name="nombreProducto"
+              name="title"
               id="nombreProducto"
               value={formData.nombreProducto}
               onChange={handleChange}
@@ -86,7 +99,7 @@ function Form() {
               Descripción del Producto
             </label>
             <textarea
-              name="descripcion"
+              name="description"
               id="descripcion"
               value={formData.descripcion}
               onChange={handleChange}
@@ -101,7 +114,7 @@ function Form() {
             </label>
             <input
               type="number"
-              name="precio"
+              name="price"
               id="precio"
               value={formData.precio}
               onChange={handleChange}
@@ -115,7 +128,7 @@ function Form() {
             </label>
             <input
               type="text"
-              name="nombre"
+              name="user_name"
               id="nombre"
               value={formData.nombre}
               onChange={handleChange}
@@ -129,7 +142,7 @@ function Form() {
             </label>
             <input
               type="email"
-              name="email"
+              name="user_email"
               id="email"
               value={formData.email}
               onChange={handleChange}
@@ -143,7 +156,7 @@ function Form() {
             </label>
             <input
               type="text"
-              name="telefono"
+              name="user_phone"
               id="telefono"
               value={formData.telefono}
               onChange={handleChange}
@@ -157,19 +170,23 @@ function Form() {
             </label>
             <input
               type="file"
-              name="imagenes"
+              name="image_url"
               id="imagenes"
               multiple
               onChange={handleImagenesChange}
               className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
             />
           </div>
-          <button
+          {/* <button
             type="submit"
             className="hover:shadow-form w-full rounded-md bg-indigo-600 py-3 px-8 text-center text-base font-semibold text-white outline-none"
           >
-            Enviar
-          </button>
+            Subir Producto
+          </button> */}
+          <Button
+          type="submit"
+          text="Subir Producto"
+          />
         </form>
       </div> 
     </div>
