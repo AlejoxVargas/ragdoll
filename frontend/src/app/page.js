@@ -13,7 +13,6 @@ export default function Home() {
       <Navbar/>
       <Herotwo/>
       
-      <Card/>
       <Suscribe/>
       <Footer/>
     </div>
