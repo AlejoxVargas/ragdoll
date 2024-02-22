@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Card from "../Card";
 
-test("renders Card component with correct content", () => {
+test("Si Card tiene el contenido correcto", () => {
   render(<Card />);
 
   const titleElement = screen.getByText(/Tailwind card/i);

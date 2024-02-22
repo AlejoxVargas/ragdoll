@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Button from "../Button";
 
-test("renders Button component with correct text", () => {
+test("si Button tiene el texto correcto", () => {
   const buttonText = "Añadir";
   render(<Button text={buttonText} />);
 
@@ -13,7 +13,7 @@ test("renders Button component with correct text", () => {
   expect(buttonElement).toHaveClass("bg-[#a62139]");
 });
 
-test("button click event works correctly", () => {
+test("si funciona con el clic el Button", () => {
   const handleClick = jest.fn();
 
   render(<Button text="Click me" onClick={handleClick} />);

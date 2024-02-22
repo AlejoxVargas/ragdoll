@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Footer from "../Footer";
 
-test("renders Footer component with correct text and links", () => {
+test("Si Footer tiene el  texto y links", () => {
   render(<Footer />);
 
   const mainTextElement = screen.getByText(/Listo para subir tus retales/i);

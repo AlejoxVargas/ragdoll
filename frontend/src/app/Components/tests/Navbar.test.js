@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import Navbar from "../Navbar";
 
-test("renders Navbar component", () => {
+test("renders componente Navbar", () => {
   render(<Navbar />);
   const linkElement = screen.getByText(/home/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test("renders Navbar component with all links", () => {
+test(" Navbar component conecta los links", () => {
   render(<Navbar />);
 
   const homeLink = screen.getByText(/home/i);
