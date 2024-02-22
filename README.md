@@ -1,5 +1,5 @@
 
-![logo](https://github.com/AlejoxVargas/ragdoll/assets/151158420/a7027e29-4de2-4e8f-849b-00e12c773f3f)
+                              ![logo](https://github.com/AlejoxVargas/ragdoll/assets/151158420/a7027e29-4de2-4e8f-849b-00e12c773f3f)
 
 
 Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer una plataforma donde sobrantes del sector textil puedan ser anunciados y los usuarios puedan acceder a esos recursos y subir los suyos propios, y el sistema de pago será a traves de puntos(botones) enfocado al reciclaje. Es un proyecto escalable y que puede ser implementado en otros sectores.
@@ -16,8 +16,8 @@ El cliente sube sus sobrantes, prendas y accesorios de los que no va a hacer uso
 El usuario busca en la página lo que necesita para reciclarlo o utilizarlo en nuevas creaciones.
 
 Las funcionalidades básicas que cubren la plataforma son las siguientes:
-.Registrar productos que se mostraran en tarjetas
-.Eliminar productos que se hayan vendido.
+- Registrar productos que se mostraran en tarjetas
+- Eliminar productos que se hayan vendido.
 
 # git branches
    ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
@@ -36,7 +36,7 @@ Las funcionalidades básicas que cubren la plataforma son las siguientes:
 | origin/Paola| Rama de backend|
 | origin/Eva | Rama de backend|
 
-🛠️ ##Tecnologías utilizadas
+🛠️ #Tecnologías utilizadas
 
 ![Static Badge](https://img.shields.io/badge/React-v%208.2.43-green?logo=react) 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v2.2.19-blue?logo=tailwind-css)
@@ -51,25 +51,24 @@ Hemos utilizado Miro para crear tablero donde tener  diagramas de flujo.
 [Prototipado con Figma](https://www.figma.com/file/NuoRtU7GcLemidoKmBIzfO/RAGDOLL.COM?type=design&node-id=0-1&mode=design&t=EKAkpU02OOFX2kWU-0)
 
 
-## Nuestro equipo(18)
+# Nuestro equipo(18)
 
-# Frontend
--Mayo Ramirez
--Shan
--Alicia Ontiveros
--Ana Maria Fernandez
+### Frontend
+- Mayo Ramirez
+- Shan
+- Alicia Ontiveros
+- Ana Maria Fernandez
 
-# Backend
--Romina Ruiz
--Paola Andrea Guerra
--Alejo
--Eva Velasco
+### Backend
+- Romina Ruiz
+- Paola Andrea Guerra
+- Alejo
+- Eva Velasco
 
 # Expresiones de Gratitud 🎁
 
 ![globant](https://seeklogo.com/images/G/Globant-logo-824E22435D-seeklogo.com.gif)
 
-![Favicon Factoria F5 Web]
 
 
 
