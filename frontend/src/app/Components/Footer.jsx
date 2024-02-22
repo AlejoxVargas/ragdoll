@@ -8,7 +8,7 @@ export function Footer() {
                 Listo para subir tus retales<br></br>Empieza ahora, el planeta lo necesita.
             </h2>
             <a className="mt-8 xl:mt-12 px-12 py-5 text-lg font-medium leading-tight inline-block bg-[#d93b65] rounded-full shadow-xl border border-transparent hover:bg-[#d93b65] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-999 focus:ring-sky-500"
-                href="#">Comenzar</a>
+                href="/Form">Comenzar</a>
             <div className="mt-14 xl:mt-20">
                 <nav className="flex flex-wrap justify-center text-lg font-medium">
                     <div className="px-5 py-2"><a href="#">Contact</a></div>
