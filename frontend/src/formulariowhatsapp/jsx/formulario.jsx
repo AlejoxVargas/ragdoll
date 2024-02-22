@@ -43,8 +43,8 @@ function Reservas() {
     <form className="formulario">
       <img src="imgLogo.jpg" alt="Logo" className="imgLogo" />
 
-      <h1 className="formulario__titulo">DIGYTIPY</h1>
-      <h3 className="formulario__subtitulo">Reservas</h3>
+      <h1 className="formulario__titulo">RAG DOLL</h1>
+      <h3 className="formulario__subtitulo">Consultas</h3>
       <p className="formulario__parrafo">
         Rellena este formulario para realizar tu consulta
       </p>
@@ -60,15 +60,15 @@ function Reservas() {
       />
 
       
-      <label htmlFor="correo" className="formulario__label">Empleado de preferencia</label>
+      <label htmlFor="correo" className="formulario__label">Correo electrónico</label>
       <select
         id="correo"
         className="formulario__input"
         value={correo}
         onChange={(e) => setCorreo(e.target.value)}
       >
-        <option>correo 1</option>
-        <option>correo 2</option>
+        <option>Correo 1</option>
+        <option>Correo 2</option>
       </select>
 
       <label htmlFor="consulta" className="formulario__label">¿Qué consulta quieres realizar?</label>
@@ -82,7 +82,7 @@ function Reservas() {
         <option>HILOS</option>
         <option>RETALES</option>
         <option>CREMALLERAS</option>
-        <option>PRENDAS VINTAGE</option>
+        <option>PRENDAS USADAS</option>
       </select>
 
       <div id="respuesta">{respuesta}</div>
