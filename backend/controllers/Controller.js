@@ -72,33 +72,22 @@ export const getOneSell = async (req, res) => {
 
 export const createSell = async (req, res) => {
   try {
-    // Ejecuta el middleware de multer para manejar la carga de la imagen
-    uploadImage(req, res, async function (err) {
-      if (err) {
-        return res.status(400).json({ message: err.message });
-      }
+    const { title, tags, description, price, image_url, user_email, user_phone, user_name } = req.body;
 
-      try {
-        console.log(req.file);
-const image_url = req.file ? req.file.path.replace(/\\/g, "/") : null;
-        const newsell = await SellModel.create({
-          title: req.body.title,
-          tags: req.body.tags,
-          description: req.body.description,
-          price: req.body.price,
-          image_url: image_url,
-          user_email: req.body.user_email,
-          user_phone: req.body.user_phone,
-          user_name: req.body.user_name,
-        });
+    const newSell = await SellModel.create({
+      title,
+      tags,
+      description,
+      price,
+      image_url,
+      user_email,
+      user_phone,
+      user_name,
+    });
 
-        res.json({
-          message: "¡Registro creado correctamente!",
-          venta: newsell,
-        });
-      } catch (error) {
-        res.status(500).json({ message: error.message });
-      }
+    res.json({
+      message: "¡Venta creada correctamente!",
+      venta: newSell,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -107,31 +96,84 @@ const image_url = req.file ? req.file.path.replace(/\\/g, "/") : null;
 
 export const updateSell = async (req, res) => {
   try {
-    // Ejecuta el middleware de multer para manejar la carga de la imagen
-    uploadImage(req, res, async function (err) {
-      if (err instanceof multer.MulterError) {
-        return res.status(500).json({ message: err.message });
-      } else if (err) {
-        return res.status(500).json({ message: err.message });
-      }
+    const sellId = req.params.id;
+    const { title, tags, description, price, image_url, user_email, user_phone, user_name } = req.body;
 
-      if (req.file) {
-        req.body.image_url = req.file.path;
-      }
+    await SellModel.update(
+      { title, tags, description, price, image_url, user_email, user_phone, user_name },
+      { where: { id: sellId } }
+    );
 
-      // Actualiza el blog
-      await SellModel.update(req.body, {
-        where: { id: req.params.id },
-      });
-
-      res.json({
-        message: "Registro actualizado correctamente",
-      });
+    res.json({
+      message: "Registro actualizado correctamente",
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+
+// export const createSell = async (req, res) => {
+//   try {
+//     // Ejecuta el middleware de multer para manejar la carga de la imagen
+//     uploadImage(req, res, async function (err) {
+//       if (err) {
+//         return res.status(400).json({ message: err.message });
+//       }
+
+//       try {
+//         console.log(req.file);
+// const image_url = req.file ? req.file.path.replace(/\\/g, "/") : null;
+//         const newsell = await SellModel.create({
+//           title: req.body.title,
+//           tags: req.body.tags,
+//           description: req.body.description,
+//           price: req.body.price,
+//           image_url: image_url,
+//           user_email: req.body.user_email,
+//           user_phone: req.body.user_phone,
+//           user_name: req.body.user_name,
+//         });
+
+//         res.json({
+//           message: "¡Registro creado correctamente!",
+//           venta: newsell,
+//         });
+//       } catch (error) {
+//         res.status(500).json({ message: error.message });
+//       }
+//     });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
+// export const updateSell = async (req, res) => {
+//   try {
+//     // Ejecuta el middleware de multer para manejar la carga de la imagen
+//     uploadImage(req, res, async function (err) {
+//       if (err instanceof multer.MulterError) {
+//         return res.status(500).json({ message: err.message });
+//       } else if (err) {
+//         return res.status(500).json({ message: err.message });
+//       }
+
+//       if (req.file) {
+//         req.body.image_url = req.file.path;
+//       }
+
+//       // Actualiza el blog
+//       await SellModel.update(req.body, {
+//         where: { id: req.params.id },
+//       });
+
+//       res.json({
+//         message: "Registro actualizado correctamente",
+//       });
+//     });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 export const deleteSell = async (req, res) => {
   try {

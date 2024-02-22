@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Navbar/>
       <Herotwo/>
-      <Hero/>
+      
       <Card/>
       <Suscribe/>
       <Footer/>
