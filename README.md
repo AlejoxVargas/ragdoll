@@ -9,6 +9,7 @@ Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer
 
 ``npm install``
  ``npm run dev ``
+``npm install --save-dev jest @testing-library/react @testing-library/jest-dom``
 
 ##backend
 
