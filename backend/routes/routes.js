@@ -1,10 +1,10 @@
 import express from "express";
 import {
-  getAllBuys,
-  getOneBuy,
-  createBuy,
-  updateBuy,
-  deleteBuy,
+  // getAllBuys,
+  // getOneBuy,
+  // createBuy,
+  // updateBuy,
+  // deleteBuy,
   getAllSells,
   getOneSell,
   createSell,
@@ -15,11 +15,11 @@ import {
 const router = express.Router();
 
 // Rutas para la tabla "buys"
-router.get("/buys", getAllBuys);
-router.get("/buys/:id", getOneBuy);
-router.post("/buys", createBuy);
-router.put("/buys/:id", updateBuy);
-router.delete("/buys/:id", deleteBuy);
+// router.get("/buys", getAllBuys);
+// router.get("/buys/:id", getOneBuy);
+// router.post("/buys", createBuy);
+// router.put("/buys/:id", updateBuy);
+// router.delete("/buys/:id", deleteBuy);
 
 // Rutas para la tabla "sells"
 router.get("/sells", getAllSells);

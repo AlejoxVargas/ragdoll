@@ -3,28 +3,28 @@ import db from "../database/db.js";
 
 const Sell = db.define("sell", {
   title: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
   tags: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
   description: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
   price: {
     type: DataTypes.INTEGER,
   },
   image_url: {
-    type: DataTypes.STRING(300),
+    type: DataTypes.STRING,
   },
   user_email: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
   user_phone: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
   user_name: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING,
   },
 });
 

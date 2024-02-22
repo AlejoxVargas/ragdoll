@@ -1,103 +1,142 @@
-"use client";
-import { useState } from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+"use client"
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 
-const CreateBuyPage = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    tags: "",
-    description: "",
-    price: "",
-    image: null,
-  });
+const URI = 'http://localhost:8000/sells/';
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: files ? files[0] : value,
-    }));
-  };
+const CompCreateBlog = () => {
+    const [title, setTitle] = useState('');
+    const [tags, setTags] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState('');
+    const [image, setImage] = useState(null);
+    const [userEmail, setUserEmail] = useState('');
+    const [userPhone, setUserPhone] = useState('');
+    const [userName, setUserName] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("title", formData.title);
-      formDataToSend.append("tags", formData.tags);
-      formDataToSend.append("description", formData.description);
-      formDataToSend.append("price", formData.price);
-      formDataToSend.append("image", formData.image_url);
+    const router = useRouter();
 
-      const response = await fetch("http://localhost:8000/sells", {
-        method: "POST",
-        body: formDataToSend,
-      });
+    const handleImageChange = (event) => {
+        setImage(event.target.files[0]);
+    };
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-      } else {
-        console.error("Error al crear la compra");
-      }
-    } catch (error) {
-      console.error("Error al crear la compra:", error);
-    }
-  };
-
-  return (
-    <div>
-      <Navbar/>
+    const store = async (e) => {
+        e.preventDefault();
       
-      <h1>Crear Compra</h1>
-      <form onSubmit={handleSubmit}>
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('tags', tags);
+        formData.append('description', description);
+        formData.append('price', price);
+        formData.append('image', image);
+        formData.append('user_email', userEmail);
+        formData.append('user_phone', userPhone);
+        formData.append('user_name', userName);
+      
+        try {
+          await axios.post(URI, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+          router.push('/');
+        } catch (error) {
+          console.error('Error al crear el post:', error);
+        }
+    };
+          
+    return (
         <div>
-          <label>Título</label>
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Etiquetas</label>
-          <input
-            type="text"
-            name="tags"
-            value={formData.tags}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Descripción</label>
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Precio</label>
-          <input
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Imagen</label>
-          <input type="file" name="image" onChange={handleChange} />
-        </div>
-        <button type="submit">Crear Compra</button>
-      </form>
+            <h3>
+               Crear post
+            </h3>
+            <form onSubmit={store}>
+                <div className='mb-3'>
+                    <label className='form-label'>Título</label>
+                    <input 
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        type="text"
+                        className='form-control'
+                    />
+                </div>
 
-      <Footer/>
-    </div>
-  );
+                <div className='mb-3'>
+                    <label className='form-label'>Etiquetas</label>
+                    <input 
+                        value={tags}
+                        onChange={(e) => setTags(e.target.value)}
+                        type="text"
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Descripción</label>
+                    <textarea 
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        type="text"
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Precio</label>
+                    <input 
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        type="number"
+                        className='form-control'
+                    />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="image" className="form-label">Imagen</label>
+                    <input 
+                        id="image" 
+                        type="file" 
+                        accept="image/*" 
+                        onChange={handleImageChange} 
+                        className="form-control" 
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Email de usuario</label>
+                    <input 
+                        value={userEmail}
+                        onChange={(e) => setUserEmail(e.target.value)}
+                        type="email"
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Teléfono de usuario</label>
+                    <input 
+                        value={userPhone}
+                        onChange={(e) => setUserPhone(e.target.value)}
+                        type="tel"
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Nombre de usuario</label>
+                    <input 
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
+                        type="text"
+                        className='form-control'
+                    />
+                </div>
+
+                <button type='submit' className='btn btn-primary'>Guardar</button>
+            </form>
+        </div>
+    );
 };
 
-export default CreateBuyPage;
+export default CompCreateBlog;

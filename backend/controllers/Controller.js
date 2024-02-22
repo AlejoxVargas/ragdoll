@@ -1,55 +1,55 @@
 import multer from "multer";
 import { uploadImage } from "../middleware/Upload.js";
-import BuyModel from "../models/BuyModel.js";
+// import BuyModel from "../models/BuyModel.js";
 import SellModel from "../models/sellModel.js";
 
-// Métodos para la tabla "buys"
-export const getAllBuys = async (req, res) => {
-  try {
-    const buys = await BuyModel.findAll();
-    res.json(buys);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+// // Métodos para la tabla "buys"
+// export const getAllBuys = async (req, res) => {
+//   try {
+//     const buys = await BuyModel.findAll();
+//     res.json(buys);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
-export const getOneBuy = async (req, res) => {
-  try {
-    const buy = await BuyModel.findByPk(req.params.id);
-    res.json(buy);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+// export const getOneBuy = async (req, res) => {
+//   try {
+//     const buy = await BuyModel.findByPk(req.params.id);
+//     res.json(buy);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
-export const createBuy = async (req, res) => {
-  try {
-    await BuyModel.create(req.body);
-    res.status(201).json({ message: "Compra creada correctamente" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+// export const createBuy = async (req, res) => {
+//   try {
+//     await BuyModel.create(req.body);
+//     res.status(201).json({ message: "Compra creada correctamente" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
-export const updateBuy = async (req, res) => {
-  try {
-    await BuyModel.update(req.body, {
-      where: { id: req.params.id },
-    });
-    res.json({ message: "Compra actualizada correctamente" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+// export const updateBuy = async (req, res) => {
+//   try {
+//     await BuyModel.update(req.body, {
+//       where: { id: req.params.id },
+//     });
+//     res.json({ message: "Compra actualizada correctamente" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
-export const deleteBuy = async (req, res) => {
-  try {
-    await BuyModel.destroy({ where: { id: req.params.id } });
-    res.json({ message: "Compra eliminada correctamente" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+// export const deleteBuy = async (req, res) => {
+//   try {
+//     await BuyModel.destroy({ where: { id: req.params.id } });
+//     res.json({ message: "Compra eliminada correctamente" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 // Métodos para la tabla "sells"
 export const getAllSells = async (req, res) => {
@@ -72,16 +72,24 @@ export const getOneSell = async (req, res) => {
 
 export const createSell = async (req, res) => {
   try {
-    // Ejecuta el middleware de multer para manejar la carga de la imagen
     uploadImage(req, res, async function (err) {
-      if (err) {
+      if (err instanceof multer.MulterError) {
         return res.status(400).json({ message: err.message });
+      } else if (err) {
+        return res.status(500).json({ message: err.message });
       }
 
       try {
-        console.log(req.file);
-const image_url = req.file ? req.file.path.replace(/\\/g, "/") : null;
-        const newsell = await SellModel.create({
+        let image_url = null;
+
+        // Verifica si se ha cargado un archivo
+        if (req.file) {
+          // Si hay un archivo, genera la URL de la imagen
+          image_url = req.file.path.replace(/\\/g, "/");
+        }
+
+        // Crea una nueva venta con la información proporcionada
+        const newSell = await SellModel.create({
           title: req.body.title,
           tags: req.body.tags,
           description: req.body.description,
@@ -92,15 +100,18 @@ const image_url = req.file ? req.file.path.replace(/\\/g, "/") : null;
           user_name: req.body.user_name,
         });
 
+        // Responde con un mensaje y la venta creada
         res.json({
-          message: "¡Registro creado correctamente!",
-          venta: newsell,
+          message: "¡Venta creada correctamente!",
+          venta: newSell,
         });
       } catch (error) {
+        // Manejo de errores en la creación de la venta
         res.status(500).json({ message: error.message });
       }
     });
   } catch (error) {
+    // Manejo de errores generales
     res.status(500).json({ message: error.message });
   }
 };
@@ -114,6 +125,7 @@ export const updateSell = async (req, res) => {
       } else if (err) {
         return res.status(500).json({ message: err.message });
       }
+      
 
       if (req.file) {
         req.body.image_url = req.file.path;
