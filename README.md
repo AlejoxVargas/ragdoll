@@ -12,6 +12,12 @@ Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer
 
 ##backend
 
+``npm i cors mysql sequeliza``
+``npm install --save--dev nodemon``
+``npm install express``
+``nodemon app``
+
+
 
 # Ragdoll(página de compraventa de sobrantes textiles y accesorios)
 
