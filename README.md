@@ -58,9 +58,9 @@ Las funcionalidades básicas que cubren la plataforma son las siguientes:
 # Nuestro equipo(18)
 
 ### Frontend
-- Mayo Ramirez
+- Mayo Ramirez(https://github.com/Mayonesio)
 - Shan
-- Alicia Ontiveros
+- Alicia Ontiveros(https://github.com/AliciaoE)
 - Ana Maria Fernandez
 
 ### Backend
