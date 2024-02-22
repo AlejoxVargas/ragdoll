@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -33,6 +34,13 @@ const Navbar = () => {
           <li>
             <a className="text-sm" href="#">Contact</a>
           </li>
+          <Link
+              
+              href="/About"
+              className="hover:underline"
+            >
+              About
+            </Link>
         </ul>
         {/* Menú desplegable para la versión móvil */}
         <div className='nav-toggle md:hidden' onClick={toggleNav} role="button" aria-expanded={isNavOpen} aria-controls="nav-links">
@@ -44,14 +52,15 @@ const Navbar = () => {
         <div className="container mx-auto md:hidden">
           <ul className="flex flex-col items-center bg-[#a62139] text-white py-3">
             <li>
-              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="#">Home</a>
+              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/">Home</a>
             </li>
             <li>
-              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="#">About</a>
+              <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="/about">About</a>
             </li>
             <li>
               <a className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" href="#">Contact</a>
             </li>
+            
           </ul>
         </div>
       )}

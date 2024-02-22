@@ -1,4 +1,5 @@
 import React from "react";
+import Images from 'next/image'
 
 function Hero() {
     return(
@@ -61,7 +62,16 @@ function Hero() {
                     </div>
                 </div>
                 <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
-                    <img src="https://www.tailwind-kit.com/images/object/10.png" className="max-w-xs md:max-w-sm m-auto"/>
+                   <Images
+                   src="/maniqui1.png"
+                   alt="Logo de RagDoll"
+                   className="dark:invert max-w-xs md:max-w-sm m-auto"
+                   width={600}
+                   height={24}
+                   priority
+                   ></Images>
+                    
+                    {/* <img src="../public/images/maniqui.png" className="max-w-xs md:max-w-sm m-auto"/> */}
                 </div>
             </div>
         </div>
