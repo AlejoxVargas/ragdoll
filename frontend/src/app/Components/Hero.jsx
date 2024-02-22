@@ -1,44 +1,12 @@
 import React from "react";
 import Images from 'next/image'
+import Link from "next/link";
 
 function Hero() {
     return(
         <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-        {/* <header className="h-24 sm:h-32 flex items-center z-30 w-full">
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <div className="uppercase text-gray-800 dark:text-white font-black text-3xl">
-                    Watch.ME
-                </div>
-                <div className="flex items-center">
-                    <nav className="font-sen text-gray-800 dark:text-white uppercase text-lg lg:flex items-center hidden">
-                        <a href="#" className="py-2 px-6 flex">
-                            Home
-                        </a>
-                        <a href="#" className="py-2 px-6 flex">
-                            Watch
-                        </a>
-                        <a href="#" className="py-2 px-6 flex">
-                            Product
-                        </a>
-                        <a href="#" className="py-2 px-6 flex">
-                            Contact
-                        </a>
-                        <a href="#" className="py-2 px-6 flex">
-                            Carrer
-                        </a>
-                    </nav>
-                    <button className="lg:hidden flex flex-col ml-4">
-                        <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                        <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                        <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </header> */}
-        <div className="bg-white dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
+            
+         <div className="bg-white dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
             <div className="container mx-auto px-6 flex relative py-16">
                 <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
                     <span className="w-20 h-2 bg-gray-800 dark:bg-white mb-12">
@@ -63,11 +31,11 @@ function Hero() {
                 </div>
                 <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
                    <Images
-                   src="/images/maniqui1.png"
+                   src="/images/image1.jpg"
                    alt="Logo de RagDoll"
                    className="dark:invert max-w-xs md:max-w-sm m-auto"
-                   width={600}
-                   height={24}
+                   width={384}
+                   height={384}
                    priority
                    ></Images>
                     
