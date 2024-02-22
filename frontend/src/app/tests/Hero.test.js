@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Hero from "../Hero";
+import Hero from "../Components/Hero";
 
 test("links en el componente Hero funciona", () => {
   render(<Hero />);

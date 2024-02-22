@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Footer from "../Footer";
+import Footer from "../Components/Footer";
 
 test("Si Footer tiene el  texto y links", () => {
   render(<Footer />);
