@@ -49,9 +49,9 @@ Las funcionalidades básicas que cubren la plataforma son las siguientes:
 
 # Planificación
 Hemos utilizado Miro para crear tablero donde tener  diagramas de flujo.
-[Ver diagramas](https://miro.com/app/board/uXjVNqL-ueQ=/)
-[Planificación con Trello](https://trello.com/b/GxLkIZ9k/hackathon-grupo-18)
-[Prototipado con Figma](https://www.figma.com/file/NuoRtU7GcLemidoKmBIzfO/RAGDOLL.COM?type=design&node-id=0-1&mode=design&t=EKAkpU02OOFX2kWU-0)
+![Ver diagramas](https://miro.com/app/board/uXjVNqL-ueQ=/)
+![Planificación con Trello](https://trello.com/b/GxLkIZ9k/hackathon-grupo-18)
+![Prototipado con Figma](https://www.figma.com/file/NuoRtU7GcLemidoKmBIzfO/RAGDOLL.COM?type=design&node-id=0-1&mode=design&t=EKAkpU02OOFX2kWU-0)
 
 
 # Nuestro equipo(18)
