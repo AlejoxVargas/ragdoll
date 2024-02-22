@@ -7,8 +7,8 @@ Nos han pedido un proyecto de un dominio en un marketplace, hemos decidido hacer
 
 ##frontend
 
-``npm install
-npm run dev ``
+-``npm install
+- npm run dev ``
 
 ##backend
 
