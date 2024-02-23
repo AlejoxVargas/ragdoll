@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize("ragdolldb", "root", "Ix35gobrasil003", {
+const db = new Sequelize("ragdolldb", "root", "", {
   host: "localhost",
   dialect: "mysql",
-  port: 3306,
+  port: 3307,
 });
 
 export default db;
