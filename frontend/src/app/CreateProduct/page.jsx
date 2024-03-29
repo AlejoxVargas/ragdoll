@@ -48,8 +48,8 @@ const CreateBuyPage = () => {
 
   return (
     <div>
-      <Navbar/>
-      
+      <Navbar />
+
       <h1>Crear Compra</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -95,7 +95,7 @@ const CreateBuyPage = () => {
         <button type="submit">Crear Compra</button>
       </form>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

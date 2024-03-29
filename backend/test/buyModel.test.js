@@ -28,4 +28,5 @@ describe('SellsModel', () => {
     // Añade aquí más expectativas para los demás campos de tu modelo
   });
 
+  // Añade más pruebas para tus métodos de modelo aquí
 });
